@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftLibrary</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <div>
+        <button id="iniciar-button">Iniciar sesión</button>
+        <div id="iniciarnormal" style="display: none;">
+            <p>Ingresa tu correo:</p>
+            <input type="email" placeholder="Ingresa tu correo">
+            <p>Ingresa tu contraseña:</p>
+            <input type="password" placeholder="Ingresa tu contraseña">
+            <a href="contraseña.html" >Olvidaste tu contraseña</a>
+        </div>
+        <a href="">Ingresar como staff</a>
+        <div id="iniciarstaff" style="display: none;">
+            <p>Ingresa tu correo:</p>
+            <input type="email" placeholder="Ingresa tu correo">
+            <p>Ingresa tu contraseña:</p>
+            <input type="password" placeholder="Ingresa tu contraseña">
+            <a href="contraseña.html" >Olvidaste tu contraseña</a>
+        </div>
+    </div>
+    <div>
+        <button id="crear-button">Crear cuenta</button>
+        <div id="crear-cuenta" style="display: none;">
+            <p>Nombre(s):</p>
+            <input type="text" placeholder="Ingrese su nombre" id="nombre"/>
+            <p>Apellidos:</p>
+            <input type="text" placeholder="Ingrese sus apellidos" id="apellido"/>
+            <p>Género:</p>
+            <input type="radio" placeholder="Género"  id="genero-masculino" name="genero" value="Masculino"/> Masculino
+            <input type="radio" placeholder="Género" id="genero-femenino" name="genero" value="Femenino"/> Femenino
+            <input type="radio" placeholder="Género" id="genero-otro" name="genero" value="Otro"/> Otro
+            <p>Edad:</p>
+            <input type="number" placeholder="Ingrese su edad" id="edad"/>
+            <p>Teléfono:</p>
+            <input type="text" placeholder="Ingrese su no. de teléfono" id="telefono"/>
+            <p>Dirección:</p>
+            <input type="text" placeholder="Ingrese su dirección" id="direccion"/>
+            <p>Correo:</p>
+            <input type="email" placeholder="Ingrese su corero" id="corre"/>
+            <p>Contraseña:</p>
+            <input type="text" placeholder="Ingrese su contraseña" id="contraseña"/>
+            <p>Vuelva a ingresar su contraseña:</p>
+            <input type="text" placeholder="Ingrese su contraseña" id="contraseña"/>
+        </div>
+    </div>
+</body>
+</html>
