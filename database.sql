@@ -2,7 +2,6 @@ CREATE DATABASE Biblioteca;
 
 USE Biblioteca;
 
-
 CREATE TABLE Salas (
     id INT PRIMARY KEY AUTO_INCREMENT,
     unidades INT
@@ -74,3 +73,4 @@ CREATE TABLE Usuario (
     contraseña VARCHAR(255),
     apellidos VARCHAR(255)
 );
+
