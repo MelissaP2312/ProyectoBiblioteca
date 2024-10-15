@@ -5,17 +5,19 @@ body {
     background-size:cover;
     
     -webkit-font-smoothing: antialiased;
-    font: normal 14px Roboto,arial,sans-serif;
-    font-family: 'Dancing Script', cursive!important;
+    font: normal 14px 'Lora', serif;
+    font-family: 'Lora', serif !important;
   }
   
   .container {
       padding: 110px;
+      align-items: center;
   }
   ::placeholder { 
       color: #ffffff!important;
       opacity: 1;
-      font-size:18px!important;
+      font-size:12px!important;
+      align-self: center;
   }
   .form-login {
       background-color: rgba(0,0,0,0.55);
