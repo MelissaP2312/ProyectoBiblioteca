@@ -1,14 +1,13 @@
-CREATE DATABASE Biblioteca;
+CREATE DATABASE IF NOT EXISTS Biblioteca;
 
 USE Biblioteca;
 
-CREATE TABLE Salas (
+CREATE TABLE IF NOT EXISTS Salas (
     id INT PRIMARY KEY AUTO_INCREMENT,
     unidades INT
 );
 
-
-CREATE TABLE Libros (
+CREATE TABLE IF NOT EXISTS Libros (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(255) NOT NULL,
     autor VARCHAR(255),
@@ -18,16 +17,14 @@ CREATE TABLE Libros (
     unidades INT
 );
 
-
-CREATE TABLE Material (
+CREATE TABLE IF NOT EXISTS Material (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(255) NOT NULL,
     tipo VARCHAR(255) NOT NULL,
     unidades INT
 );
 
-
-CREATE TABLE Rentas (
+CREATE TABLE IF NOT EXISTS Rentas (
     id INT PRIMARY KEY AUTO_INCREMENT,
     persona VARCHAR(255) NOT NULL,
     no_membresia INT,
@@ -38,8 +35,7 @@ CREATE TABLE Rentas (
     FOREIGN KEY (id_libro) REFERENCES Libros(id)
 );
 
-
-CREATE TABLE Membresias (
+CREATE TABLE IF NOT EXISTS Membresias (
     no_membresia INT PRIMARY KEY AUTO_INCREMENT,
     id_persona INT,
     nivel_membresia VARCHAR(50),
@@ -48,8 +44,7 @@ CREATE TABLE Membresias (
     FOREIGN KEY (id_persona) REFERENCES Usuario(id)
 );
 
-
-CREATE TABLE Personal (
+CREATE TABLE IF NOT EXISTS Personal (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(255) NOT NULL,
     edad INT,
@@ -61,8 +56,7 @@ CREATE TABLE Personal (
     contraseña VARCHAR(255)
 );
 
-
-CREATE TABLE Usuario (
+CREATE TABLE IF NOT EXISTS Usuario (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(255) NOT NULL,
     genero VARCHAR(50),
@@ -73,4 +67,3 @@ CREATE TABLE Usuario (
     contraseña VARCHAR(255),
     apellidos VARCHAR(255)
 );
-
