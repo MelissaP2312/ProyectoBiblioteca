@@ -18,25 +18,34 @@
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <!-- Font Awesome-->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
 </head>
 <body>
 
 <!-- Contenedor Vista Iniciar Sesión-->
-<div class="container" style="display: none;">
+<div id="login-container" class="container" style="display: block;">
     <div class="row justify-content-center">
         <div class="col-md-4 text-center">
             <div class="form-login"></br>
                 <h1>Iniciar sesión</h1>
                 </br>
-                <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="usuario"/>
-                </br></br>
-                <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="contraseña"/>
+                <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="Usuario"/>
+                </br>
+                <div class="input-group">
+                    <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="Contraseña"/>
+                    <span class="input-group-text" id="togglePassword">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                </div>
+                
+                </br>
+                <a href="loginempleados.html" id="login-empleado" >Iniciar sesión como empleado</a>
                 </br></br>
                 <div class="wrapper">
                     <span class="group-btn">
-                        <a href="#" class="btn btn-danger btn-md">Registrar <i class="fa fa-sign-in"></i></a>
-                        <a href="#" class="btn btn-danger btn-md">Login <i class="fa fa-sign-in"></i></a>
+                        <a class="btn btn-danger btn-md" id="registerButton">Registrar</a>
+                        <a class="btn btn-danger btn-md">Login</a>
                     </span>
                 </div>
             </div>
@@ -45,7 +54,7 @@
 </div>
 
 <!-- Contenedor Vista Registro-->
-<div class="container" style="display: block;">
+<div id="register-container" class="container" style="display: none;">
     <div class="row justify-content-center">
         <div class="col-md-4 text-center">
             <div class="form-login"></br>
@@ -94,12 +103,10 @@
                     <div class="form-group">
                         <label for="password">Ingresa tu contraseña:</label>
                         <input type="password" id="password" class="form-control" placeholder="Contraseña" required>
-                        <small id="passwordHelp" class="form-text text-muted" style="color:red;"></small>
-                    </div>
+                    </div>                  
                     <div class="form-group">
                         <label for="password-confirm">Verifica tu contraseña:</label>
                         <input type="password" id="password-confirm" class="form-control" placeholder="Verifica la contraseña" required>
-                        <small id="passwordMatchHelp" class="form-text text-muted" style="color:red;"></small>
                     </div>
                     <br/>
                     <div class="wrapper">

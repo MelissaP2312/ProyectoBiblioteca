@@ -9,6 +9,46 @@ body {
     font-family: 'Lora', serif !important;
 }
 
+#login-empleado {
+    all: unset;
+    color: #cfcfcf;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+#login-empleado:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+.input-group .form-control {
+    padding-right: 40px;
+}
+
+.input-group-text {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    padding: 5px;
+    z-index: 2; 
+}
+
+.input-group-text i {
+    color: #aaa;
+}
+
+
 .container {
     padding: 110px;
     align-items: center;
