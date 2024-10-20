@@ -7,7 +7,6 @@ CREATE TABLE Salas (
     unidades INT
 );
 
-
 CREATE TABLE Libros (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(255) NOT NULL,
@@ -18,7 +17,6 @@ CREATE TABLE Libros (
     unidades INT
 );
 
-
 CREATE TABLE Material (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(255) NOT NULL,
@@ -26,8 +24,7 @@ CREATE TABLE Material (
     unidades INT
 );
 
-
-CREATE TABLE Rentas (
+CREATE TABLE Rentas_Libros (
     id INT PRIMARY KEY AUTO_INCREMENT,
     persona VARCHAR(255) NOT NULL,
     no_membresia INT,
@@ -38,6 +35,28 @@ CREATE TABLE Rentas (
     FOREIGN KEY (id_libro) REFERENCES Libros(id)
 );
 
+CREATE TABLE Rentas_Material (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    persona VARCHAR(255) NOT NULL,
+    no_membresia INT,
+    id_material INT,
+    fecha_salida DATE,
+    fecha_regreso DATE,
+    FOREIGN KEY (no_membresia) REFERENCES Membresias(no_membresia),
+    FOREIGN KEY (id_material) REFERENCES Material(id)
+);
+
+CREATE TABLE Rentas_Salas (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    persona VARCHAR(255) NOT NULL,
+    no_membresia INT,
+    id_sala INT,
+    fecha_reserva DATE,
+    hora_inicio TIME,
+    hora_fin TIME,
+    FOREIGN KEY (no_membresia) REFERENCES Membresias(no_membresia),
+    FOREIGN KEY (id_sala) REFERENCES Salas(id)
+);
 
 CREATE TABLE Membresias (
     no_membresia INT PRIMARY KEY AUTO_INCREMENT,
@@ -47,7 +66,6 @@ CREATE TABLE Membresias (
     telefono VARCHAR(20),
     FOREIGN KEY (id_persona) REFERENCES Usuario(id)
 );
-
 
 CREATE TABLE Personal (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -61,7 +79,6 @@ CREATE TABLE Personal (
     contraseña VARCHAR(255)
 );
 
-
 CREATE TABLE Usuario (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(255) NOT NULL,
@@ -73,4 +90,3 @@ CREATE TABLE Usuario (
     contraseña VARCHAR(255),
     apellidos VARCHAR(255)
 );
-
