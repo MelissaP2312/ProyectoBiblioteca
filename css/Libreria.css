@@ -1,29 +1,144 @@
-h1{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+body{
+    background: rgb(204,229,255);
+    background: -moz-linear-gradient(127deg, rgba(204,229,255,1) 1%, rgba(234,255,194,1) 50%, rgba(255,128,151,1) 100%);
+    background: -webkit-linear-gradient(127deg, rgba(204,229,255,1) 1%, rgba(234,255,194,1) 50%, rgba(255,128,151,1) 100%);
+    background: linear-gradient(127deg, rgba(204,229,255,1) 1%, rgba(234,255,194,1) 50%, rgba(255,128,151,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cce5ff",endColorstr="#ff8097",GradientType=1);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.opciones{
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+h1{
+    font-family: Monotype Corsiva; /*Tipo de fuente*/
+    text-align: center; /*Alinea el texto*/ 
+    font-size: 50px; /*Tamaño de la fuente*/
+    display: flex; /* Alinea los elementos en fila */
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
     
 }
 
-.opciones li{
+#libros {
+    display: flex; /* Alinea los elementos en fila */
+    flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en múltiples filas */
+    gap: 20px;  /* Espacio entre tarjetas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    padding: 10px; /* Espacio interno del contenedor */
+}
+
+.ContenedorLibro {
+    max-width: 200px; /* Tamaño máximo de la tarjeta */
+    min-width: 150px; /* Tamaño mínimo de la tarjeta */
+    display: flex; /* Alinea los elementos en fila */
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    padding: 20px; /* Espacio interno de la tarjeta */
+    border: 1px solid #000000; /* Borde de la tarjeta */
+    background-color: #eaffc2; /* Color de fondo de la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%; /* Ocupará todo el ancho disponible dentro del `flex` */
+}
+
+.ContenedorLibro:hover{
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+.ContenedorLibro img {
+    width: 100% !important; /* Ocupará todo el ancho disponible */
+    height: 50% !important; /* Permite que la altura se ajuste según el tamaño de la imagen */
+    object-fit: cover;
+    border-radius: 10px;
+    border: solid 1px #000000;
+}
+
+.ContenedorLibro h4, .ContenedorLibro p {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+}
+
+.ContenedorLibro p[id] {
+    font-size: 1rem;
+    color: #555;
+    border-bottom: 1px solid #000000;
+}
+
+.tarjetarank{
+    display: flex; /* Alinea los elementos en fila */
+    flex-direction: row; /* Alinea los elementos en fila */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    margin-bottom: 10px;
+    align-items: center; /* Centra los elementos verticalmente */
+    border: 1px solid #000000; /* Borde de la tarjeta */
+    background-color: #dafe98; /* Color de fondo de la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
+}
+
+.tarjetarank:hover{
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.contenedorrank p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #000000;
+
+}
+
+.tarjetarank p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #000000;
+}
+
+
+.opciones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas si es necesario */
+}
+
+.opciones li {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: inline-block;
-    padding: 10px 10vw !important;
-    color : white;
+    padding: 10px 5vw; /* Ajusta el padding para que los elementos se ajusten en varias páginas */
+    margin: 5px;
+    color: white;
     background: #60a2c6;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
     transition: background 0.7s ease;
 }
+
+@media (max-width: 768px) {
+    .opciones li {
+        padding: 10px 3vw; /* Reducir aún más el padding en pantallas más pequeñas */
+        width: 30%; /* Para que los elementos ocupen aproximadamente la mitad del ancho */
+    }
+}
+
+@media (max-width: 480px) {
+    .opciones li {
+        width: 100%; /* En pantallas muy pequeñas, que los elementos ocupen el 100% del ancho */
+        padding: 10px 2vw; /* Reducir el padding al mínimo */
+    }
+}
+
 
 .opciones li:hover{
     background: #badcd5; /* Cambia el color de fondo al pasar el ratón */
