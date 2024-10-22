@@ -15,28 +15,13 @@
             <button id="createTopicBtn">Crear nuevo tema</button>
         </div>
 
-        <ul class="topics">
-            <li>
-                <a href="#">¿Cuál es tu libro favorito este año?</a>
-                <div class="topic-meta">Creado por Usuario1 - 10 respuestas</div>
-            </li>
-            <li>
-                <a href="#">Recomendaciones de libros para emprendedores</a>
-                <div class="topic-meta">Creado por Usuario2 - 8 respuestas</div>
-            </li>
-            <li>
-                <a href="#">¿Qué libro debería leer a continuación?</a>
-                <div class="topic-meta">Creado por Usuario3 - 5 respuestas</div>
-            </li>
+        <ul class="topics" id="topics-list">
+           <div id="loading"></div>
         </ul>
     </div>
 
     <script>
-        // Aquí puedes agregar funcionalidad para el botón de creación de temas
-        const createTopicBtn = document.getElementById('createTopicBtn');
-        createTopicBtn.addEventListener('click', function() {
-            alert('Aquí irá la funcionalidad para crear un nuevo tema.');
-        });
+        
     </script>
 </body>
 </html>

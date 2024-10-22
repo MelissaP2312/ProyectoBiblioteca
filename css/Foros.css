@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #b6694b;
     margin: 0;
     padding: 20px;
 }
@@ -11,7 +11,8 @@ body {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: #000000 1px solid;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.93);
 }
 
 h1 {
@@ -71,4 +72,20 @@ h1 {
     font-size: 14px;
     color: #666;
     margin-top: 5px;
+}
+
+#loading {
+    display: block;
+    border: 8px solid #0b0b0b; /* Light grey */
+    border-top: 8px solid #db3434; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
