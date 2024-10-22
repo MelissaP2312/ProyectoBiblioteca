@@ -30,7 +30,7 @@ try {
         try {
             $stmt = $conn->prepare("INSERT INTO Usuario (nombre, genero, edad, telefono, correo, contraseña) VALUES (?, ?, ?, ?, ?, ?)");
             $stmt->execute([$nombre, $_POST['gender'], (int)$edad, $telefono, $correo, password_hash($contrasena, PASSWORD_DEFAULT)]);
-            echo "Usuario registrado exitosamente.";
+            header('Location: ../html/login.html');
         } catch (PDOException $e) {
             echo "Error en la consulta SQL: " . $stmt->queryString . "<br>";
             echo "Error: " . $e->getMessage();

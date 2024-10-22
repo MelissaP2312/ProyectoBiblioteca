@@ -23,6 +23,7 @@
 </head>
 <body>
 
+
 <!-- Contenedor Vista Iniciar Sesión-->
 <div id="login-container" class="container" style="display: block;">
     <div class="row justify-content-center">
@@ -30,23 +31,24 @@
             <div class="form-login"></br>
                 <h1>Iniciar sesión</h1>
                 </br>
-                <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="Usuario"/>
-                </br>
-                <div class="input-group">
-                    <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="Contraseña"/>
-                    <span class="input-group-text" id="togglePassword">
-                        <i class="fas fa-eye"></i>
-                    </span>
-                </div>
-                </br>
-                </br></br>
-                <div class="wrapper">
-                    <span class="group-btn">
-                        <a class="btn btn-danger btn-md" id="registerButton">Registrar</a>
-                        <a class="btn btn-danger btn-md">Login</a>
-                    </span>
-                </div>
-                <br>
+                <!-- Formulario de inicio de sesión -->
+                <form action="../php/login.php" method="POST">
+                    <input type="text" name="correo" id="userName" class="form-control input-sm chat-input" placeholder="Correo electrónico" required/>
+                    </br>
+                    <div class="input-group">
+                        <input type="password" name="contraseña" id="userPassword" class="form-control input-sm chat-input" placeholder="Contraseña" required/>
+                        <span class="input-group-text" id="togglePassword" style="cursor:pointer;">
+                            <i class="fas fa-eye"></i>
+                        </span>
+                    </div>
+                    </br>
+                    <div class="wrapper">
+                        <span class="group-btn">
+                            <a class="btn btn-danger btn-md" id="registerButton">Registrar</a>
+                            <button type="submit" class="btn btn-danger btn-md">Login</button>
+                        </span>
+                    </div>
+                </form>
                 <!-- Botón de login con Facebook -->
                 <div class="wrapper">
                     <span class="group-btn">
@@ -59,6 +61,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- Contenedor Vista Registro-->
 <div id="register-container" class="container" style="display: none;">
@@ -111,6 +114,7 @@
                     <div class="wrapper">
                         <span class="group-btn">
                             <button type="submit" class="btn btn-danger btn-md" id="registerBtn">Registrar</button>
+                            <button type="submit" class="btn btn-danger btn-md" id="iniciarBtn">Login</button>
                         </span>
                     </div>
                 </form>
@@ -118,7 +122,7 @@
         </div>
     </div>
 </div>
-
+<script src="../js/script.js"></script>
 <script>
     window.fbAsyncInit = function() {
       FB.init({
@@ -167,6 +171,6 @@
         }, {scope: 'email'});
     }    
   </script>
-<script src="../js/script.js"></script>
+
 </body>
 </html>
