@@ -2,6 +2,30 @@ CREATE DATABASE Biblioteca;
 
 USE Biblioteca;
 
+
+CREATE TABLE Personal (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(255) NOT NULL,
+    edad INT,
+    genero VARCHAR(50),
+    direccion VARCHAR(255),
+    telefono VARCHAR(20),
+    posicion VARCHAR(255),
+    correo VARCHAR(255),
+    contraseña VARCHAR(255)
+);
+
+CREATE TABLE Usuario (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(255) NOT NULL,
+    genero VARCHAR(50),
+    edad INT,
+    telefono VARCHAR(20),
+    correo VARCHAR(255),
+    contraseña VARCHAR(255)
+);
+
+
 CREATE TABLE Salas (
     id INT PRIMARY KEY AUTO_INCREMENT,
     unidades INT
@@ -65,28 +89,4 @@ CREATE TABLE Membresias (
     penalizaciones INT,
     telefono VARCHAR(20),
     FOREIGN KEY (id_persona) REFERENCES Usuario(id)
-);
-
-CREATE TABLE Personal (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(255) NOT NULL,
-    edad INT,
-    genero VARCHAR(50),
-    direccion VARCHAR(255),
-    telefono VARCHAR(20),
-    posicion VARCHAR(255),
-    correo VARCHAR(255),
-    contraseña VARCHAR(255)
-);
-
-CREATE TABLE Usuario (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(255) NOT NULL,
-    genero VARCHAR(50),
-    edad INT,
-    telefono VARCHAR(20),
-    direccion VARCHAR(255),
-    correo VARCHAR(255),
-    contraseña VARCHAR(255),
-    apellidos VARCHAR(255)
 );

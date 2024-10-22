@@ -38,14 +38,21 @@
                         <i class="fas fa-eye"></i>
                     </span>
                 </div>
-                
                 </br>
-                <a href="loginempleados.html" id="login-empleado" >Iniciar sesión como empleado</a>
                 </br></br>
                 <div class="wrapper">
                     <span class="group-btn">
                         <a class="btn btn-danger btn-md" id="registerButton">Registrar</a>
                         <a class="btn btn-danger btn-md">Login</a>
+                    </span>
+                </div>
+                <br>
+                <!-- Botón de login con Facebook -->
+                <div class="wrapper">
+                    <span class="group-btn">
+                        <a class="btn btn-primary btn-md" style="color: white;" onclick="onLogin();">
+                            <i class="fab fa-facebook-f"></i> 
+                        </a>
                     </span>
                 </div>
             </div>
@@ -59,14 +66,14 @@
         <div class="col-md-4 text-center">
             <div class="form-login"></br>
                 <h1>Crear cuenta</h1>
-                <form action="#" method="post">
+                <form action="../php/register.php" method="post">
                     <div class="form-group">
                         <label for="name">Ingresa tu nombre:</label>
-                        <input type="text" id="name" class="form-control" placeholder="Nombres" required>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Nombres" required>
                     </div>
                     <div class="form-group">
                         <label for="age">Ingresa tu edad:</label>
-                        <input type="number" id="age" class="form-control" placeholder="Edad" min="1" max="120" required>
+                        <input type="number" name="age" id="age" class="form-control" placeholder="Edad" min="1" max="120" required>
                     </div>
                     <div class="form-group">
                         <label>Selecciona tu género:</label><br>
@@ -84,29 +91,21 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="address">Ingresa tu dirección:</label>
-                        <input type="text" id="address" class="form-control" placeholder="Dirección" required>
-                    </div>
-                    <div class="form-group">
                         <label for="phone">Ingresa tu teléfono:</label>
-                        <input type="text" id="phone" class="form-control" placeholder="Teléfono" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="position">Posición o cargo:</label>
-                        <input type="text" id="position" class="form-control" placeholder="Posición" required>
+                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Teléfono" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Ingresa tu correo electrónico:</label>
-                        <input type="email" id="email" class="form-control" placeholder="Correo" required>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Correo" required>
                         <small id="emailHelp" class="form-text text-muted" style="color:red;"></small>
                     </div>
                     <div class="form-group">
                         <label for="password">Ingresa tu contraseña:</label>
-                        <input type="password" id="password" class="form-control" placeholder="Contraseña" required>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required>
                     </div>                  
                     <div class="form-group">
                         <label for="password-confirm">Verifica tu contraseña:</label>
-                        <input type="password" id="password-confirm" class="form-control" placeholder="Verifica la contraseña" required>
+                        <input type="password" name="password-confirm" id="password-confirm" class="form-control" placeholder="Verifica la contraseña" required>
                     </div>
                     <br/>
                     <div class="wrapper">
@@ -119,6 +118,55 @@
         </div>
     </div>
 </div>
+
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '522300940606305',  
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v17.0' 
+      });
+        
+      FB.AppEvents.logPageView();   
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  
+    // Función para manejar el login con Facebook
+    function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+          // El usuario está autenticado, puedes obtener su información
+          FB.api('/me', function(response) {
+            console.log('Nombre: ' + response.name);
+            console.log('ID: ' + response.id);
+            // Aquí puedes redirigir o enviar los datos a tu backend
+          });
+        } else {
+          console.log('Usuario no autenticado');
+        }
+      });
+    }
+
+    function onLogin(){
+        FB.login((response)=>{
+            if(response.authResponse){
+                FB.api('/me?fields=email,name,age',(response)=>{
+                    console.log(response);
+                });
+            } else {
+                console.error("Error de autenticación o el usuario canceló el inicio de sesión.");
+            }
+        }, {scope: 'email'});
+    }    
+  </script>
 <script src="../js/script.js"></script>
 </body>
 </html>
