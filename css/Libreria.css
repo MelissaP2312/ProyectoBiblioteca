@@ -42,6 +42,14 @@ h1{
     width: 100%; /* Ocupará todo el ancho disponible dentro del `flex` */
 }
 
+.ContenedorLibro:hover{
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
 .ContenedorLibro img {
     width: 100% !important; /* Ocupará todo el ancho disponible */
     height: 50% !important; /* Permite que la altura se ajuste según el tamaño de la imagen */
@@ -60,6 +68,40 @@ h1{
     font-size: 1rem;
     color: #555;
     border-bottom: 1px solid #000000;
+}
+
+.tarjetarank{
+    display: flex; /* Alinea los elementos en fila */
+    flex-direction: row; /* Alinea los elementos en fila */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    margin-bottom: 10px;
+    align-items: center; /* Centra los elementos verticalmente */
+    border: 1px solid #000000; /* Borde de la tarjeta */
+    background-color: #dafe98; /* Color de fondo de la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
+}
+
+.tarjetarank:hover{
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.contenedorrank p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #000000;
+
+}
+
+.tarjetarank p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #000000;
 }
 
 
