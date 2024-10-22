@@ -3,6 +3,12 @@ $(document).ready(function() {
         $('#login-container').hide();
         $('#register-container').show();
     });
+
+    $('#iniciarBtn').on('click', function(e) {
+        e.preventDefault(); // Evitar el envío del formulario
+        $('#login-container').show();
+        $('#register-container').hide();
+    });
     
     const passwordField = document.getElementById("userPassword");
     const togglePassword = document.getElementById("togglePassword");
