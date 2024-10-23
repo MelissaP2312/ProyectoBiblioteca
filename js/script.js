@@ -5,7 +5,7 @@ $(document).ready(function() {
     });
 
     $('#iniciarBtn').on('click', function(e) {
-        e.preventDefault(); // Evitar el envío del formulario
+        e.preventDefault(); 
         $('#login-container').show();
         $('#register-container').hide();
     });
